@@ -53,7 +53,7 @@ Entrez le mot de passe d’administration et votre clé publique devrait être c
 **Sur votre serveur**, l'édition du fichier de configuration SSH pour désactiver l’authentification par mot de passe est gérée par un paramètre système :
 
 ```bash
-sudo yunohost settings set security.ssh.password_authentication -v no
+sudo yunohost settings set security.ssh.ssh_password_authentication -v no
 ```
 
 ---
@@ -65,7 +65,7 @@ C'est géré par un paramètre système, qui se charge de configurer les service
 Il n'est pas utile de modifier ce port si vous avez désactivé l'authentification par mot de passe.
 
 ```bash
-sudo yunohost settings set security.ssh.port -v <votre_numero_de_port_ssh>
+sudo yunohost settings set security.ssh.ssh_port -v <votre_numero_de_port_ssh>
 ```
 
 **Lors de la prochaine connexion SSH**, vous devrez ajouter le paramètre `-p` suivi du port SSH.
@@ -87,13 +87,13 @@ Changer le niveau de compatibilité n'est pas définitif et il est possible de r
 **Sur votre serveur**, modifiez la politique pour NGINX :
 
 ```bash
-sudo yunohost settings set security.nginx.compatibility -v modern
+sudo yunohost settings set security.nginx.nginx_compatibility -v modern
 ```
 
 **Sur votre serveur**, modifiez la politique pour SSH :
 
 ```bash
-sudo yunohost settings set security.ssh.compatibility -v modern
+sudo yunohost settings set security.ssh.ssh_compatibility -v modern
 ```
 
 ### Désactivation de l’API YunoHost

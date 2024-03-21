@@ -49,7 +49,7 @@ Digitate la password di amministrazione e la chiave verrà copiata nel vostro se
 **Sul vostro server** la modifica della configurazione di SSH per disattivare l'autenticazione a password è gestita da un'impostazione di sistema:
 
 ```bash
-sudo yunohost settings set security.ssh.password_authentication -v no
+sudo yunohost settings set security.ssh.ssh_password_authentication -v no
 ```
 ---
 
@@ -61,7 +61,7 @@ Questa impostazione è gestita da un'impostazione di sistema che aggiorna le con
 ! Se modificate una qualsiasi impostazione nel file `/etc/ssh/sshd_config`, anche solo la porta di ascolto, YunoHost non gestirà più il file. Per questa ragione è necessario usare sempre gli strumenti di amministrazione per fare modifiche ai file di configurazione del sistema. 
 
 ```bash
-sudo yunohost settings set security.ssh.port -v <new_ssh_port_number>
+sudo yunohost settings set security.ssh.ssh_port -v <new_ssh_port_number>
 ```
 
 **Per tutte le connessioni SSH seguenti** è necessario aggiungere l'opzione `-p` seguita dal numero della porta di SSH.
@@ -82,12 +82,12 @@ Il cambio di livello di compatibilità non è definitivo e può essere ripristin
 
 **Sul vostro server**, cambio della policy per NGINX
 ```bash
-sudo yunohost settings set security.nginx.compatibility -v modern
+sudo yunohost settings set security.nginx.nginx_compatibility -v modern
 ```
 
 **Sul vostro server**, cambio della policy per SSH
 ```bash
-sudo yunohost settings set security.ssh.compatibility -v modern
+sudo yunohost settings set security.ssh.ssh_compatibility -v modern
 ```
 
 ### Disabilitare le API di YunoHost
